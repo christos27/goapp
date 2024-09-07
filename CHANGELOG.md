@@ -19,3 +19,9 @@ https://github.com/christos27/goapp/issues/8
 https://github.com/christos27/goapp/issues/9
 https://github.com/christos27/goapp/issues/10
 
+# v0.3.0
+
+## Features
+
+Counter provides the random string.
+https://github.com/christos27/goapp/issues/12
