@@ -35,3 +35,12 @@ func IsValidHexChar(c rune) bool {
 	}
 	return false
 }
+
+// Benchmarks RandString()
+//
+// Benchmarks RandString() by generating a length 10 hex string.
+func BenchmarkRandString(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = RandString(10)
+	}
+}
