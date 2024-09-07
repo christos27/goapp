@@ -69,7 +69,7 @@ func (w *Watcher) ResetCounter() {
 	w.counterLock.Lock()
 	defer w.counterLock.Unlock()
 
-	w.counter.Iteration = 0
+	w.counter.Iteration = 1
 
 	select {
 	case w.outCh <- w.counter:
