@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/url"
@@ -10,8 +11,6 @@ import (
 
 	"github.com/gorilla/websocket"
 )
-
-const totalConnections = 3
 
 func StartConnection(id int, wg *sync.WaitGroup) {
 	defer wg.Done()
@@ -65,13 +64,14 @@ func StartConnection(id int, wg *sync.WaitGroup) {
 }
 
 func main() {
-
-	fmt.Println("Started WS client")
+	totalConnections := flag.Int("n", 1, "Number of WebSocket connections to initiate")
+	flag.Parse()
+	log.Printf("Started WS client with %d connections\n", *totalConnections)
 
 	// Wait for all connections to finish
 	var wg sync.WaitGroup
 
-	for i := 1; i <= totalConnections; i++ {
+	for i := 1; i <= *totalConnections; i++ {
 		wg.Add(1)
 		go StartConnection(i, &wg)
 	}
