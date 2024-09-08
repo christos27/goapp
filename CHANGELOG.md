@@ -25,3 +25,9 @@ https://github.com/christos27/goapp/issues/10
 
 Counter provides the random string.
 https://github.com/christos27/goapp/issues/12
+
+# v0.4.0
+
+## Features
+Created CLI client
+https://github.com/christos27/goapp/issues/21
