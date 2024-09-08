@@ -46,8 +46,12 @@ window.addEventListener("load", function(evt) {
         if (!ws) {
             return false;
         }
-        print("SEND: " + input.value);
-        ws.send(input.value);
+        const data = {
+            iteration: Number(input.value)
+        };
+        const dataStr = JSON.stringify(data);
+        print("SEND: " + dataStr);
+        ws.send(dataStr);
         return false;
     };
     document.getElementById("close").onclick = function(evt) {
@@ -70,7 +74,7 @@ You can change the message and send multiple times.
 <form>
 <button id="open">Open</button>
 <button id="close">Close</button>
-<p><input id="input" type="text" value="{}">
+<p><input id="input" type="text" value="1">
 <button id="send">Reset</button>
 </form>
 </td><td valign="top" width="50%">

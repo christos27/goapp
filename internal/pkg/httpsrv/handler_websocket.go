@@ -62,7 +62,7 @@ func (s *Server) handlerWebSocket(w http.ResponseWriter, r *http.Request) {
 					log.Printf("failed to unmarshal message: %v\n", err)
 					continue
 				}
-				watch.ResetCounter()
+				watch.ResetCounter(m.Iteration)
 			case <-doneCh:
 				return
 			case <-s.quitChannel:

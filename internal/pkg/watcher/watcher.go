@@ -66,11 +66,11 @@ func (w *Watcher) Send(str string) { w.inCh <- str }
 
 func (w *Watcher) Recv() <-chan *Counter { return w.outCh }
 
-func (w *Watcher) ResetCounter() {
+func (w *Watcher) ResetCounter(iteration int) {
 	w.counterLock.Lock()
 	defer w.counterLock.Unlock()
 
-	w.counter.Iteration = 0
+	w.counter.Iteration = iteration
 
 	select {
 	case w.outCh <- w.counter:

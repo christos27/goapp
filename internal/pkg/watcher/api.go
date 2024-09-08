@@ -5,4 +5,6 @@ type Counter struct {
 	Value     string `json:"value"`
 }
 
-type CounterReset struct{}
+type CounterReset struct {
+	Iteration int `json:"iteration"`
+}
