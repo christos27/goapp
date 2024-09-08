@@ -15,7 +15,7 @@ import (
 func StartConnection(id int, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	log := log.New(os.Stdout, fmt.Sprintf("[conn #%d] ", id), log.Lmsgprefix)
+	log := log.New(os.Stdout, fmt.Sprintf("[conn #%d] ", id), log.LstdFlags|log.Lmsgprefix)
 
 	interrupt := make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)
