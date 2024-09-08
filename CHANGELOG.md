@@ -31,3 +31,11 @@ https://github.com/christos27/goapp/issues/12
 ## Features
 Created CLI client
 https://github.com/christos27/goapp/issues/21
+
+
+# v0.5.0
+
+## Features
+
+User can input the reset iteration value
+https://github.com/christos27/goapp/issues/23
